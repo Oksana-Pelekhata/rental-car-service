@@ -41,7 +41,7 @@ display: inline-block;
 font-family: manrope;
 font-size: 16px;
 font-weight: 500;
-line-height: 1.5;
+line-height: calc(24/16);
 color: #121417;
 
 `
@@ -78,24 +78,16 @@ font-size: 12px;
 font-weight: 400;
 line-height: calc(18/12);
 color: rgba(18, 20, 23, 0.5);
-&:not(:last-child)::after {
-    content: '';
-    height: 12px;
-    border: 1px solid rgba(18, 20, 23, 0.2);
-    margin-left: 6px;
-  }
-  
-  &:not(:last-child) {
-    margin-right: 6px;
-  }
+
 `
 
 export const LearnMoreBtn = styled.button`
+margin-top: 28px;
  padding-top: 12px;
  padding-bottom: 12px;
     border-radius: 12px;
     border: transparent;
-    min-width: 274px;
+    width: 100%;
 
     font-family: manrope;
     font-weight: 500;
@@ -105,8 +97,6 @@ export const LearnMoreBtn = styled.button`
     color: #fff;
     background: #3470FF;
     cursor: pointer;
-    transition: 
-        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
 
     &:hover,
     &:focus {

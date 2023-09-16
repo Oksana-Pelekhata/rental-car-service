@@ -50,7 +50,7 @@ const CarList = ({ carsList }) => {
                   <Description>{car.functionalities[0]} </Description>
                 </DescriptionWrapper>
               </DescriptionThumb>
-              {/* <LearnMoreBtn>Learn more</LearnMoreBtn> */}
+              <LearnMoreBtn type='button'>Learn more</LearnMoreBtn>
              
               
           </CardItem>
