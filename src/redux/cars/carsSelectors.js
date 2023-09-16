@@ -1,1 +1,1 @@
-export const allCars = state => state.cars;
+export const allCars = state => state.cars.cars;

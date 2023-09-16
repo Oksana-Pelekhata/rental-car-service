@@ -9,7 +9,7 @@ const CatalogPage = () => {
     const cars = useSelector(allCars);
 
     useEffect(() => { dispatch(getAllCars()) }, [dispatch])
-    
+    console.log('cars', cars)
   return (
    <CarList carsList={cars}/>
   )
