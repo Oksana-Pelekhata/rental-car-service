@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CardItem, CardList, Img, ImgThumb, CardHeader, CardModel, CardHeaderThumb, DescriptionThumb, DescriptionWrapper, Description, LearnMoreBtn } from './CarList.styled';
+import { Modal } from 'components/Modal/Modal.styled';
+import CarCard from 'components/CarCard/CarCard';
 
 const CarList = ({ carsList }) => {
+  const [isShowModal, setIsShowModal] = useState(false)
+
+	const openModal = () => setIsShowModal(true)
+
+	const closeModal = () => setIsShowModal(false)
   
   return (
     carsList.length > 0 && (
@@ -49,12 +56,20 @@ const CarList = ({ carsList }) => {
                   <Description>{car.functionalities[0]} </Description>
                 </DescriptionWrapper>
               </DescriptionThumb>
-              <LearnMoreBtn type='button'>Learn more</LearnMoreBtn>
-             
+              <LearnMoreBtn type='button' onClick={openModal}>Learn more</LearnMoreBtn>
+          {isShowModal && (
+				<Modal close={closeModal}>
+					<CarCard carInfo={car} city={city}
+            country={country}
+            close={closeModal} />
+				</Modal>
+			)}
               
-          </CardItem>
+            </CardItem>
+            
         )
         })}
+           
     </CardList>
       
    )
