@@ -8,7 +8,7 @@ margin-right: auto;
 gap: 18px;
 align-items: flex-end;
 margin-bottom: 50px;
-margin-top: 50px;
+margin-top: 100px;
 justify-content: center;
 `
 

@@ -5,7 +5,7 @@ export const Header = styled.header`
 display: flex;
 flex-wrap: wrap;
 align-items: center;
-margin-bottom: 50px;
+// margin-bottom: 50px;
 height: 50px;
 background-color: rgba(52, 112, 255, 0.8);
 justify-content: space-around;

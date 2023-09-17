@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { CardItem, CardList, Img, ImgThumb, CardHeader, CardModel, CardHeaderThumb, DescriptionThumb, DescriptionWrapper, Description, LearnMoreBtn } from './CarList.styled';
-import { Modal } from 'components/Modal/Modal.styled';
+
 import CarCard from 'components/CarCard/CarCard';
+import Modal from 'components/Modal/Modal';
 
 const CarList = ({ carsList }) => {
   const [isShowModal, setIsShowModal] = useState(false)

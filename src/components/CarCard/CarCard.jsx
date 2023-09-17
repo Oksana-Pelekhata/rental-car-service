@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardHeaderThumb, CardHeader, CardModel, ImgThumb, Img, DescriptionThumb, DescriptionWrapper, Description, About, SubTitle, Thumb, ThumbText, Span, Container, CloseModal, CloseIcon } from './CarCard.styled'
+import { CardHeaderThumb, CardHeader, CardModel, ImgThumb, Img, DescriptionThumb, DescriptionWrapper, Description, About, SubTitle, Thumb, ThumbText, Span, Container, CloseModal, CloseIcon, Button, ButtonThumb } from './CarCard.styled'
 
 const CarCard = ({ carInfo, close, city, country }) => {
 
@@ -106,6 +106,9 @@ const CarCard = ({ carInfo, close, city, country }) => {
            <Thumb>
               <ThumbText>Price: <Span>{carInfo.rentalPrice} </Span></ThumbText>
           </Thumb>
+          <ButtonThumb>
+            <Button href="tel:+380730000000">Rental car</Button>
+      </ButtonThumb>
     </Container>
   )
 }

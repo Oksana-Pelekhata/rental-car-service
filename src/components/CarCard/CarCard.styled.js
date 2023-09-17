@@ -6,10 +6,10 @@ export const Container = styled.div`
   position: relative;
   width: 100vw;
   max-width: 541px;
-  height: 100vh;
+  height: 100%;
   max-height: 752px;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 40px;
+  // border-radius: 15px;
   background-color: #ffffff;
 `;
 
@@ -110,7 +110,7 @@ line-height: calc(18/12);
 color: rgba(18, 20, 23, 0.5);
 `
 export const SubTitle = styled.h2`
-margin-bottm: 8px;
+margin-bottom: 8px;
 
 font-family: manrope;
 font-size: 14px;
@@ -139,4 +139,27 @@ font-size: 12px;
 font-weight: 600;
 line-height: calc(18/12);
 color: #3470FF;
+`
+
+export const ButtonThumb = styled.div`
+margin-top: 24px;
+padding: 12px 50px;
+background-color: #3470FF;
+border-radius: 12px;
+border: transparent;
+width: 168px;
+`
+
+export const Button = styled.a`
+text-decoration: none;
+color: #FFF;
+    font-family: manrope;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: calc(20/14);
+    text-align: center;
+&:hover,
+focus {
+    background-color: #0B44CD;
+}
 `
