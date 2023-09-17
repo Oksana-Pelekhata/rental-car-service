@@ -1,21 +1,21 @@
 import RentalCarBtn from 'components/RentalCarBtn/RentalCarBtn';
 import React, { Suspense } from 'react'
-import { NavLink } from 'react-router-dom';
 import { Outlet } from "react-router-dom"
+import { Header, Link, Navigation } from './Layout.styled';
 
 const Layout = () => {
     return (
         <>
-             <header>
-          <div>
-               <nav>
-              <NavLink to='/'>Home</NavLink>
-              <NavLink to='/catalog'>Catalog</NavLink>
-              <NavLink to='/favorites'>Favourite</NavLink>
-          </nav>
+             <Header>
+          
+               <Navigation>
+              <Link to='/'>Home</Link>
+              <Link to='/catalog'>Catalog</Link>
+              <Link to='/favorites'>Favourite</Link>
+          </Navigation>
           <RentalCarBtn />
-                </div>
-            </header>
+                
+            </Header>
             <main>
   <Suspense fallback={<div>Loading...</div>}>
                 <Outlet />

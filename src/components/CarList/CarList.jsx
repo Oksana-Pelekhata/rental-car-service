@@ -5,9 +5,8 @@ const CarList = ({ carsList }) => {
   
   return (
     carsList.length > 0 && (
-      <CardList >
+      <CardList style={{padding: '0px 100px'}} >
         {carsList.map((car) => {
-          console.log('car', car)
           const city = car.address.split(',')[1];
           const country = car.address.split(',')[2];
 

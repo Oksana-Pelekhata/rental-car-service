@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
-import HomePage from './pages/HomePage';
-import CatalogPage from './pages/CatalogPage';
-import FavouritesPage from './pages/FavouritesPage';
+import HomePage from '../pages/HomePage';
+import CatalogPage from '../pages/CatalogPage';
+import FavouritesPage from '../pages/FavouritesPage';
 
 export const App = () => {
   return (

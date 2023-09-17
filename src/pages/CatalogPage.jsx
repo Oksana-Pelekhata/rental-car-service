@@ -1,4 +1,6 @@
 import CarList from 'components/CarList/CarList';
+import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
+import { SearchMenu } from 'components/SearchMenu/SearchMenu';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllCars } from 'redux/cars/carsOperations';
@@ -10,8 +12,14 @@ const CatalogPage = () => {
 
     useEffect(() => { dispatch(getAllCars()) }, [dispatch])
     console.log('cars', cars)
-  return (
-   <CarList carsList={cars}/>
+    return (
+        <>
+            <h1 className="visually-hidden">Catalog</h1>
+            <SearchMenu />
+            <CarList carsList={cars} />
+            <LoadMoreBtn />
+      </>
+   
   )
 }
 

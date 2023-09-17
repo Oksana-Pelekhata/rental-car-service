@@ -11,6 +11,7 @@ export const CardItem = styled.li`
 // width: 268px;
 // height: 426px;
 width: calc((100% - 87px)/4);
+margin-bottom: 50px;
 `
 
 export const ImgThumb = styled.div`
