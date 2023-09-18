@@ -1,15 +1,41 @@
 import React, { useState } from 'react'
-import { CardItem, CardList, Img, ImgThumb, CardHeader, CardModel, CardHeaderThumb, DescriptionThumb, DescriptionWrapper, Description, LearnMoreBtn } from './CarList.styled';
+import { CardItem, CardList, Img, ImgThumb, CardHeader, CardModel, CardHeaderThumb, DescriptionThumb, DescriptionWrapper, Description, LearnMoreBtn, Favourite, Heart, FavoriteHeart } from './CarList.styled';
 
 import CarCard from 'components/CarCard/CarCard';
 import Modal from 'components/Modal/Modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from 'redux/cars/carsSelectors';
+import { addToFavorites, removeFromFavorites } from 'redux/cars/carsSlice';
 
 const CarList = ({ carsList }) => {
   const [isShowModal, setIsShowModal] = useState(false)
 
 	const openModal = () => setIsShowModal(true)
 
-	const closeModal = () => setIsShowModal(false)
+  const closeModal = () => setIsShowModal(false)
+  
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  console.log('favorites', favorites)
+
+  const handleClick = async car => {
+    // // dispatch(addToFavorites(car));
+    // dispatch(removeFromFavorites(car.id));
+    try {
+    
+      if (favorites.some((el) => el.id === car.id)) {
+
+        
+          await dispatch(removeFromFavorites(car.id)).unwrap()
+      } else {
+        await dispatch(addToFavorites(car)).unwrap();
+        }
+
+      } catch (error) {
+        console.log('error', error)
+      }
+        
+    }
   
   return (
     carsList.length > 0 && (
@@ -22,9 +48,18 @@ const CarList = ({ carsList }) => {
             <CardItem key={car.id}>
               <ImgThumb>
                 <Img src={car.img } alt={`${car.make} ${car.model}`} />
-              {/* <svg></svg> */}
-              </ImgThumb>
               
+             
+              <Favourite
+            type="button"
+            onClick={() => handleClick(car)}
+                >
+                  {favorites.some(el => el.id === car.id)
+                    ? (<FavoriteHeart />)
+                    : (<Heart />)}
+            
+                </Favourite>
+                 </ImgThumb>
               <CardHeaderThumb>
                 <CardHeader>{car.make}    
                   <CardModel>   {car.model}</CardModel>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { AiOutlineHeart, AiTwotoneHeart } from 'react-icons/ai';
 
 export const CardList = styled.ul`
 list-style: none;
@@ -28,6 +29,44 @@ top: 0;
 left: -50px;
 width: 400px;
 height: 100%;
+`
+
+export const Favourite = styled.button`
+  display: inline-flex;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  right: 14px;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: transparent;
+
+  fill: #ffffff;
+
+  cursor: pointer;
+
+  &:hover {
+    fill: #3470ff;
+  }
+`
+export const Heart = styled(AiOutlineHeart)`
+  width: 20px;
+  height: 20px;
+  
+
+  fill: inherit;
+   &:hover {
+    fill: #3470ff;
+  }
+`
+export const FavoriteHeart = styled(AiTwotoneHeart)`
+ width: 20px;
+  height: 20px;
+
+fill: #3470ff;
 `
 
 export const CardHeaderThumb = styled.div`

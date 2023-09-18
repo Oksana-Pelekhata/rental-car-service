@@ -8,10 +8,10 @@ import { allCars } from 'redux/cars/carsSelectors';
 
 const CatalogPage = () => {
     const dispatch = useDispatch();
-    const cars = useSelector(allCars);
+    const cars = useSelector(allCars) || [];
 
     useEffect(() => { dispatch(getAllCars()) }, [dispatch])
-    console.log('cars', cars)
+    
     return (
         <>
             <h1 className="visually-hidden">Catalog</h1>

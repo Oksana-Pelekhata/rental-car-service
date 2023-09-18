@@ -1,14 +1,11 @@
 import React from 'react'
-import { CardHeaderThumb, CardHeader, CardModel, ImgThumb, Img, DescriptionThumb, DescriptionWrapper, Description, About, SubTitle, Thumb, ThumbText, Span, Container, CloseModal, CloseIcon, Button, ButtonThumb } from './CarCard.styled'
+import { CardHeaderThumb, CardHeader, CardModel, ImgThumb, Img, DescriptionThumb, DescriptionWrapper, Description, About, SubTitle, Thumb, ThumbText, Span, Container, CloseModal, CloseIcon, Button, ButtonThumb } from './CarCard.styled';
 
 const CarCard = ({ carInfo, close, city, country }) => {
-
+  
     const rentalConditions = carInfo.rentalConditions.split('\n');
-    console.log('rentalConditions', rentalConditions)
     const ageLimit = rentalConditions[0].split(':');
-    console.log('ageLimit', ageLimit);
-    const ageRequirement = ageLimit[1]
-    console.log('ageRequirement', ageRequirement)
+    const ageRequirement = ageLimit[1];
 
     const number = carInfo.mileage;
     const locale = 'en-US';

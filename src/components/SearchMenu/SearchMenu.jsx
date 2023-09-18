@@ -1,6 +1,6 @@
 import React from 'react'
 import brands from '../../data/makes.json'
-import { Form, BlockThumb, Label, Select, SelectThumb, Input, Button } from './SearchMenu.styled'
+import { Form, BlockThumb, Label, Select, Input, Button } from './SearchMenu.styled'
 
 export const SearchMenu = () => {
     const prices = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
