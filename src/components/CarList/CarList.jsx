@@ -19,13 +19,8 @@ const CarList = ({ carsList }) => {
   console.log('favorites', favorites)
 
   const handleClick = async car => {
-    // // dispatch(addToFavorites(car));
-    // dispatch(removeFromFavorites(car.id));
     try {
-    
       if (favorites.some((el) => el.id === car.id)) {
-
-        
           await dispatch(removeFromFavorites(car.id)).unwrap()
       } else {
         await dispatch(addToFavorites(car)).unwrap();
@@ -34,7 +29,6 @@ const CarList = ({ carsList }) => {
       } catch (error) {
         console.log('error', error)
       }
-        
     }
   
   return (
@@ -48,8 +42,6 @@ const CarList = ({ carsList }) => {
             <CardItem key={car.id}>
               <ImgThumb>
                 <Img src={car.img } alt={`${car.make} ${car.model}`} />
-              
-             
               <Favourite
             type="button"
             onClick={() => handleClick(car)}
@@ -57,7 +49,6 @@ const CarList = ({ carsList }) => {
                   {favorites.some(el => el.id === car.id)
                     ? (<FavoriteHeart />)
                     : (<Heart />)}
-            
                 </Favourite>
                  </ImgThumb>
               <CardHeaderThumb>
@@ -99,15 +90,12 @@ const CarList = ({ carsList }) => {
             country={country}
             close={closeModal} />
 				</Modal>
-			)}
-              
+			)} 
             </CardItem>
-            
         )
         })}
-           
+
     </CardList>
-      
    )
   )
 }

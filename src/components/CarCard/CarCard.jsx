@@ -19,7 +19,6 @@ const CarCard = ({ carInfo, close, city, country }) => {
       </CloseModal>
           <ImgThumb>
                 <Img src={carInfo.img } alt={`${carInfo.make} ${carInfo.model}`} />
-              {/* <svg></svg> */}
           </ImgThumb>
           
           <CardHeaderThumb>

@@ -73,5 +73,10 @@ font-size: 14px;
 
 background-color: #3470FF;
 color: white;
+cursor: pointer;
+
+&:hover {
+background-color: #0B44CD;
+}
 `
 

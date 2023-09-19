@@ -121,6 +121,10 @@ export const Thumb = styled.div`
 display: inline-block;
 
 padding: 7px 14px;
+&:not(:last-child) {
+margin: 0px 8px 8px 0px;
+}
+
 
 border-radius: 35px;
 background-color: #F9F9F9;
@@ -142,7 +146,7 @@ color: #3470FF;
 `
 
 export const ButtonThumb = styled.div`
-margin-top: 24px;
+margin-top: 16px;
 padding: 12px 50px;
 background-color: #3470FF;
 border-radius: 12px;
